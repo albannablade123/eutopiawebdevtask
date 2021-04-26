@@ -18,7 +18,7 @@ public class StartupFilter{
 	/**
 	TO BE COMPLETED:
 		Create a filter class, used by other methods, to filter by location and/or sector, with a "limit" property (limiting the results found) and an "offset" property (to paginate the results)
-	 * @return 
+	 * @return startups
 	*/
 	public List<Startup> getStartups() {
 		return this.startups;
@@ -46,7 +46,7 @@ public class StartupFilter{
 	/**
 	 * 
 	 * @param location
-	 * @return
+	 * @return startup
 	 */
 	public StartupFilter locationFilter(String location) {
         this.location = location;
@@ -55,7 +55,7 @@ public class StartupFilter{
 	
 	/**
 	 * 
-	 * @return
+	 * @return startup
 	 */
 	public StartupFilter sectorFilter() {
         this.startups = this.startups.stream().filter(startup -> startup.getSector().getName().equals(this.sector)).collect(Collectors.toList());
